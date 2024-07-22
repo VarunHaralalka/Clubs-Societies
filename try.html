@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Name</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+        section {
+            background-color: #fff;
+            margin-bottom: 20px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        p {
+            color: #555;
+        }
+        .logo {
+            float: right;
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        .logo img {
+            max-width: 100%;
+            height: auto;
+        }
+        .register-btn {
+            display: block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            text-align: center;
+        }
+        .register-btn:hover {
+            background-color: #555;
+        }
+        .gallery {
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            max-height: 300px; /* Set the maximum height for the gallery */
+            margin-bottom: 20px; /* Add margin to match other sections */
+        }
+        .slideshow {
+            display: flex;
+            width: calc(100% + 20px); /* Add 20px for spacing between images */
+            transition: transform 0.5s ease;
+        }
+        .slideshow img {
+            width: calc(25% - 10px); /* 25% width for 4 images, minus 10px for spacing */
+            height: auto;
+            object-fit: cover; /* Maintain aspect ratio */
+            margin-right: 10px; /* Add right margin for spacing between images */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Club Name</h1>
+    </header>
+    <main>
+        <section class="description">
+            <p>Write your generic club information here.</p>
+        </section>
+        <section class="logo">
+            <!-- Add your logo image here -->
+            <img src="image/film.png" alt="Club Logo">
+            <a href="#" class="register-btn">Register Now</a>
+        </section>
+        <section class="achievements">
+            <h2>Achievements</h2>
+            <!-- Add your achievements content here -->
+        </section>
+        <section class="gallery">
+            <h2>Gallery</h2>
+            <div class="slideshow">
+                <!-- Add your gallery images here -->
+                <img src="img1.jpg" alt="Image 1">
+                <img src="img2.jpg" alt="Image 2">
+                <img src="img3.jpg" alt="Image 3">
+                <img src="Springspree.jpg" alt="Image 4">
+                <img src="img1.jpg" alt="Image 5">
+                <img src="img2.jpg" alt="Image 6">
+                <!-- Repeat more images as needed -->
+            </div>
+        </section>
+    </main>
+    <script>
+        // JavaScript for image sliding
+        const slideshow = document.querySelector('.slideshow');
+        const slides = document.querySelectorAll('.slideshow img');
+        const slideWidth = slides[0].clientWidth + 10; // Add 10px for right margin
+        let currentIndex = 0;
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            slideshow.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
+        }, 3000); // Change slide every 3 seconds
+    </script>
+</body>
+</html>

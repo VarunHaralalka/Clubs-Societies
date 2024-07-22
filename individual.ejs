@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/css/clubs.css" />
+    <title><%= element.C_S_ID %></title>
+    <%- include("partial/header.ejs") %>
+  </head>
+
+  <body>
+    <!-- <header>This is the header section</header> -->
+    <%- include("partial/nav.ejs") %>
+    <main>
+      <div id="h1"><h1><%= element.NAME_OF_CLUB_SOCIETY %></h1></div>
+
+      <div id="d">
+        <div id="div1" class="side"><h2>Register Now !!</h2></div>
+        <div id="div2" class="side"><h2>Achievements</h2></div>
+        <div id="div3" class="side"><h2>Upcoming Events</h2></div>
+        <div id="div4" class="side"><h2>Gallery</h2></div>
+        <div id="div5" class="side"><h2>Contact Admin</h2></div>
+        <!-- <div id="div4"></div> -->
+      </div>
+
+      <img
+        src="data:image/jpeg;base64,<%= element.photo.toString('base64') %>"
+        alt="image"
+        id="club" />
+
+      <p id="paragraph"><%= element.DESCRIPTION %></p>
+      <!-- <input type="button" value="Register Now !!"> -->
+
+      <div class="ii">
+        <h1>Previous Events</h1>
+
+        <div class="prev-container">
+          <div class="card">
+            <img src="./img/img1.jpg" alt="img1" />
+            <p>This is paragraph</p>
+          </div>
+          <div class="card">
+            <img src="./img/img1.jpg" alt="img1" />
+            <p>This is paragraph</p>
+          </div>
+          <div class="card">
+            <img src="./img/img1.jpg" alt="img1" />
+            <p>This is paragraph</p>
+          </div>
+          <div class="card">
+            <img src="./img/img1.jpg" alt="img1" />
+            <p>This is paragraph</p>
+          </div>
+          <div class="card">
+            <img src="./img/img1.jpg" alt="img1" />
+            <p>This is paragraph</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- <footer>This is the footer sectrion</footer> -->
+    <%- include("partial/footer.ejs") %>
+  </body>
+</html>
