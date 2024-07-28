@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>📝<%= club.C_S_ID %></title>
+
+    <link rel="stylesheet" href="/css/individual.css" />
+    <%- include("partial/header.ejs") %>
+  </head>
+
+  <body>
+    <!-- <header>This is the header section</header> -->
+    <%- include("partial/nav.ejs") %>
+
+    <div class="notice">
+      <span class="e">Important Notice</span>
+
+      <div class="notice-item">
+        <div class="marquee-container">
+          <% notices.forEach(notice => { %>
+          <span>📢<%= notice.title %> <%= notice.date %></span> | <% }); %>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <section class="description">
+        <div class="header">
+          <h1><%= club.club_name %></h1>
+        </div>
+        <div class="inside-description">
+          <div>
+            <h2>Description</h2>
+            <p id="paragraph"><%= club.DESCRIPTION %></p>
+          </div>
+
+          <div>
+            <img
+              src="data:image/jpeg;base64,<%= club.photo.toString('base64') %>"
+              alt="image"
+              id="club" />
+            <a href="/student_registration" class="register-btn"
+              >Register Now</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="achievements">
+        <h2>Achievements 🏅</h2>
+        <ul>
+          <% achievements.forEach(function(achievement) { %>
+          <li>
+            <p
+              style="
+                text-decoration: underline !important;
+                font-size: 20px;
+                margin: 5px;
+                color: #fff;
+              ">
+              <%= achievement.title %> 🏆
+            </p>
+
+            <br />
+            <p style="font-size: 15px; padding: 4px; color: #fff">
+              <%= achievement.description %>
+            </p>
+            <br />
+            <%= achievement.date %>
+          </li>
+          <% }) %>
+        </ul>
+      </section>
+
+      <section class="Upcomming">
+        <h2>Events 📆</h2>
+        <ul>
+          <% events.forEach(function(event) { %>
+          <li>
+            <p
+              style="
+                text-decoration: underline !important;
+                font-size: 20px;
+                margin: 5px;
+                color: #fff;
+              ">
+              <%= event.title %> 🎉
+            </p>
+
+            <br />
+            <p style="font-size: 15px; padding: 4px; color: #fff">
+              <%= event.description %>
+            </p>
+            <br />
+            <%= event.date %>
+          </li>
+          <% }) %>
+        </ul>
+      </section>
+      <section class="gallery">
+        <h2>Gallery</h2>
+        <div class="slideshow">
+          <img src="/ind_image/img1.jpg" alt="Image 1" />
+          <img src="/ind_image/img2.jpg" alt="Image 2" />
+          <img src="/ind_image/img3.jpg" alt="Image 3" />
+          <img src="/ind_image/img4.jpg" alt="Image 4" />
+          <img src="img5.jpg" alt="Image 5" />
+          <img src="/ind_image/Springspree.jpg" alt="Image 6" />
+          <img src="/ind_image/img7.jpg" alt="Image 5" />
+          <img src="/ind_image/img1.jpg" alt="Image 1" />
+          <img src="/ind_image/img2.jpg" alt="Image 2" />
+          <img src="/ind_image/img3.jpg" alt="Image 3" />
+          <img src="/ind_image/img4.jpg" alt="Image 4" />
+          <img src="/ind_image/img5.jpg" alt="Image 5" />
+          <img src="/ind_image/Springspree.jpg" alt="Image 6" />
+          <img src="/ind_image/img7.jpg" alt="Image 5" />
+        </div>
+      </section>
+    </main>
+    <!-- <footer>This is the footer sectrion</footer> -->
+    <%- include("partial/footer.ejs") %>
+
+    <script>
+      const slideshow = document.querySelector(".slideshow");
+      const slides = document.querySelectorAll(".slideshow img");
+      const slideWidth = slides[0].clientWidth + 10;
+      let currentIndex = 0;
+
+      setInterval(() => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        slideshow.style.transform = `translateX(-${
+          slideWidth * currentIndex
+        }px)`;
+      }, 3000);
+    </script>
+  </body>
+</html>

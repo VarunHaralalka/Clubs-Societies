@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("partial/header.ejs") %>
+    <link rel="stylesheet" href="/css/form.css" />
+  </head>
+
+  <body>
+    <%- include("partial/nav.ejs") %>
+    <main>
+      <div class="club-registration">
+        <div class="heading"><h1>Add your Club/Society!</h1></div>
+
+        <h2>Register Below</h2>
+        <form
+          class="club-form"
+          action="/club-registration"
+          method="post"
+          enctype="multipart/form-data">
+          <div class="first">
+            <label for=""
+              >Name of club<span style="color: red">*</span>:
+            </label>
+            <input class="name" type="text" name="cname" />
+          </div>
+          <div class="first">
+            <label for="">Add Logo<span style="color: red">*</span>: </label>
+            <input type="file" name="image" required />
+          </div>
+          <div>
+            <label for="">Description<span style="color: red">*</span>: </label>
+            <textarea name="description" id="" cols="120" rows="5"></textarea>
+          </div>
+
+          <div>
+            <label for="">Admin Name<span style="color: red">*</span>: </label>
+            <input class="name first" name="Aname" type="text" required />
+            <label>ROLL NO</label>
+            <input class="name first" name="rollno" type="text" required />
+            <label for="course">Course :</label>
+            <select name="course">
+              <option value="">Select Course</option>
+              <option value="CSE">CSE</option>
+              <option value="MSE">MSE</option>
+              <option value="BSE">BSE</option>
+            </select>
+          </div>
+          <label for="">Contact No.<span style="color: red">*</span>: </label>
+          <input
+            type="tel"
+            name="phone"
+            class="first"
+            required
+            maxlength="10" />
+
+          <label for="">Email<span style="color: red">*</span>: </label>
+          <input type="email" name="email" id="" class="name" />
+
+          <label for="">Password<span style="color: red">*</span>: </label>
+          <input type="password" name="password" id="" />
+          <label for=""
+            >Confirm Password<span style="color: red">*</span>:
+          </label>
+          <input type="password" name="cpassword" id="" />
+
+          <div>
+            <input type="submit" />
+            <input type="reset" />
+          </div>
+        </form>
+      </div>
+    </main>
+    <%- include("partial/footer.ejs") %>
+    <script src="club.js"></script>
+  </body>
+</html>

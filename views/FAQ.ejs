@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("partial/header.ejs") %>
+    <link rel="stylesheet" href="/css/faq.css" />
+  </head>
+
+  <body>
+    <%- include("partial/nav.ejs") %>
+    <main id="faq">
+      <div class="container-faq">
+        <h1>NIT Warangal Clubs and Societies FAQs</h1>
+
+        <h2>General Questions</h2>
+        <div class="faq">
+          <div class="question">
+            1. What are clubs and societies at NIT Warangal?
+          </div>
+          <div class="answer">
+            Clubs and societies at NIT Warangal are student-run organizations
+            that cater to a wide range of interests, hobbies, and academic
+            pursuits.
+          </div>
+        </div>
+        <div class="faq">
+          <div class="question">
+            2. How many clubs and societies are there at NIT Warangal?
+          </div>
+          <div class="answer">
+            NIT Warangal boasts a diverse array of clubs and societies, with
+            over 50 active organizations covering various fields such as
+            technology, arts, culture, sports, literature, and community
+            service.
+          </div>
+        </div>
+
+        <!-- More questions and answers -->
+
+        <h2>Membership and Joining</h2>
+        <div class="faq">
+          <div class="question">3. Can anyone join a club or society?</div>
+          <div class="answer">
+            Yes, absolutely! All students of NIT Warangal are encouraged to join
+            clubs and societies that align with their interests and goals.
+          </div>
+        </div>
+        <div class="faq">
+          <div class="question">4. How can I join a club or society?</div>
+          <div class="answer">
+            Joining a club or society is simple. Each club typically holds
+            membership drives or orientations at the beginning of the academic
+            year, where interested students can sign up and learn more about the
+            club's activities.
+          </div>
+        </div>
+
+        <!-- More questions and answers -->
+
+        <h2>Leadership and Activities</h2>
+        <div class="faq">
+          <div class="question">
+            5. Are there any leadership opportunities within clubs and
+            societies?
+          </div>
+          <div class="answer">
+            Yes, clubs and societies offer various leadership opportunities for
+            students who are interested in taking on roles such as president,
+            vice president, treasurer, secretary, or event coordinator.
+          </div>
+        </div>
+        <div class="faq">
+          <div class="question">
+            6. How can I contribute to a club or society if I'm unable to attend
+            regular meetings?
+          </div>
+          <div class="answer">
+            If you're unable to attend regular meetings due to academic or
+            personal commitments, there are still plenty of ways to contribute
+            to a club or society.
+          </div>
+        </div>
+
+        <!-- More questions and answers -->
+
+        <h2>Community Engagement</h2>
+        <div class="faq">
+          <div class="question">
+            7. Are there any community service opportunities through clubs and
+            societies?
+          </div>
+          <div class="answer">
+            Yes, many clubs and societies actively engage in community service
+            initiatives, such as volunteering at local schools, organizing
+            charity drives, or participating in environmental clean-up projects.
+          </div>
+        </div>
+        <div class="faq">
+          <div class="question">
+            8. Can alumni get involved with clubs and societies?
+          </div>
+          <div class="answer">
+            Absolutely! Alumni are welcome to stay connected with their alma
+            mater by getting involved with clubs and societies as mentors, guest
+            speakers, or advisors.
+          </div>
+        </div>
+
+        <!-- More questions and answers -->
+      </div>
+    </main>
+
+    <%- include("partial/footer.ejs") %>
+
+    <script>
+      // JavaScript to toggle answer visibility
+      const questions = document.querySelectorAll(".question");
+      questions.forEach((question) => {
+        question.addEventListener("click", () => {
+          const answer = question.nextElementSibling;
+          answer.style.display =
+            answer.style.display === "block" ? "none" : "block";
+        });
+      });
+    </script>
+  </body>
+</html>

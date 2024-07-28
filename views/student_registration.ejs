@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("partial/header.ejs") %>
+
+    <link rel="stylesheet" href="/css/student.css" />
+  </head>
+  <body>
+    <%- include("partial/nav.ejs") %>
+    <main id="student">
+      <div class="container-2">
+        <div class="heading">
+          <h2>Student Registration Form</h2>
+        </div>
+        <div class="form-container">
+          <p class="p-text">Register Below</p>
+          <form
+            id="registrationForm"
+            action="/student_registration"
+            method="POST"
+            onsubmit="submitForm(event)">
+            <label for="name">First Name:</label>
+            <input type="text" id="name" name="name" required />
+            <label for="name">Last Name:</label>
+            <input type="text" id="name" name="lname" required />
+            <label for="Roll Number">Roll Number</label>
+            <input type="text" name="rollno" id="rollno" required />
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="phone">Phone No.</label>
+            <input type="tel" name="phone" id="phone" required maxlength="10" />
+
+            <label for="department">Department:</label>
+            <select id="department" name="department" required>
+              <option value="">Select Department</option>
+              <option value="CSE">Computer Science and Engineering</option>
+              <option value="ECE">
+                Electronics and Communication Engineering
+              </option>
+              <option value="ME">Mechanical Engineering</option>
+              <option value="CE">Civil Engineering</option>
+              <!-- Add more options as needed -->
+            </select>
+
+            <label for="club">Club/Society:</label>
+            <select id="club" name="club" required>
+              <option value="">Select Club/Society</option>
+              <option value="Dance Club">Dance Club</option>
+              <option value="Film Club">Film Club</option>
+              <option value="Music Club">Music Club</option>
+              <option value="Yoga Club">Yoga Club</option>
+              <option value="Photography Club">Photography Club</option>
+              <option value="Literary Club">Literary Club</option>
+              <option value="SDC Club">SDC Club</option>
+              <!-- Add more options as needed -->
+            </select>
+
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <%- include("partial/footer.ejs") %>
+
+    <script src="student.js"></script>
+  </body>
+</html>

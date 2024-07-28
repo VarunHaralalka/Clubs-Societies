@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("partial/header.ejs") %>
+  </head>
+  <body>
+    <%- include("partial/nav.ejs") %>
+    <main>
+      <div class="container">
+        <% elements.forEach(element => { %>
+
+        <div class="card">
+          <a class="ll" href="/individual/<%= element.C_S_ID  %>">
+            <h2><%= element.club_name %></h2>
+            <hr />
+            <div class="img-div">
+              <img
+                src="data:image/jpeg;base64,<%= element.photo.toString('base64') %>"
+                alt="image" />
+            </div>
+          </a>
+        </div>
+
+        <% }) %>
+      </div>
+    </main>
+
+    <%- include("partial/footer.ejs") %>
+  </body>
+</html>

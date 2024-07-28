@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Admin Dashbord</title>
+    <%- include("partial/header.ejs") %>
+    <link rel="stylesheet" href="/css/admin.css" />
+  </head>
+  <body>
+    <%- include("partial/nav.ejs") %>
+    <div class="container_ad">
+      <div class="heading"><h2>Applicants</h2></div>
+
+      <form action="/admin/dashboard/<%= adminId %>/delete" method="POST">
+        <table id="data-table">
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Department</th>
+            <th>Roll Number</th>
+            <th>Select</th>
+          </tr>
+          <% elements.forEach(student => { %>
+          <tr>
+            <td><%= student.first_name %></td>
+            <td><%= student.last_name %></td>
+            <td><%= student.email %></td>
+            <td><%= student.phone %></td>
+            <td><%= student.department %></td>
+            <td><%= student.roll_no %></td>
+            <td>
+              <input
+                type="checkbox"
+                name="studentIds"
+                value="<%= student.roll_no %>" />
+            </td>
+          </tr>
+          <% }); %>
+        </table>
+        <button type="submit">Approve</button>
+      </form>
+    </div>
+
+    <div class="wrap-container">
+      <div class="heading"><h2>Add</h2></div>
+      <div class="form-container">
+        <form
+          class="notice-form"
+          method="post"
+          action="/admin/dashboard/<%= adminId %>/notice">
+          <h2>Add Notice</h2>
+          <label for="club">Club:</label>
+          <input
+            type="text"
+            value="<%=club_name[0].club_name %>"
+            placeholder="<%=club_name[0].club_name %>"
+            name="clubName"
+            required />
+          <label for="notice-title">Title:</label>
+          <input type="text" id="notice-title" name="title" required />
+          <label for="notice-date">Date:</label>
+          <input type="date" id="notice-date" name="date" required />
+          <label for="notice-description">Description:</label>
+          <textarea
+            id="notice-description"
+            name="description"
+            placeholder="Description"
+            rows="4"
+            required></textarea>
+          <input type="submit" value="submit" />
+        </form>
+
+        <!-- Achievements Form -->
+
+        <form
+          class="notice-form"
+          method="post"
+          action="/admin/dashboard/<%= adminId %>/achievements">
+          <h2>Achievements</h2>
+          <label for="club">Club:</label>
+          <input
+            type="text"
+            value="<%=club_name[0].club_name %>"
+            placeholder="<%=club_name[0].club_name %>"
+            name="clubName"
+            required />
+          <label for="notice-title">Title:</label>
+          <input type="text" id="notice-title" name="title" required />
+          <label for="notice-date">Date:</label>
+          <input type="date" id="notice-date" name="date" required />
+          <label for="notice-description">Description:</label>
+          <textarea
+            id="notice-description"
+            name="description"
+            placeholder="Description"
+            rows="4"
+            required></textarea>
+          <input type="submit" value="submit" />
+        </form>
+
+        <!-- Event Form -->
+
+        <form
+          class="notice-form"
+          method="post"
+          action="/admin/dashboard/<%= adminId %>/event">
+          <h2>Add Event</h2>
+          <label for="club">Club:</label>
+          <input
+            type="text"
+            value="<%=club_name[0].club_name %>"
+            placeholder="<%=club_name[0].club_name %>"
+            name="clubName"
+            required />
+          <label for="event-title">Title:</label>
+          <input
+            type="text"
+            id="event-title"
+            name="title"
+            placeholder="Event Title"
+            required />
+          <label for="event-date">Date:</label>
+          <input type="date" id="event-date" name="date" required />
+          <label for="event-description">Description:</label>
+          <textarea
+            id="event-description"
+            name="description"
+            placeholder="Event Description"
+            rows="4"
+            required></textarea>
+
+          <input type="submit" value="submit" />
+        </form>
+      </div>
+    </div>
+
+    <%- include("partial/footer.ejs") %>
+  </body>
+</html>
